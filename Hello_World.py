@@ -1,3 +1,4 @@
+import PyQt5
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QVBoxLayout, QLabel
 app = QApplication([])
 window = QWidget()
