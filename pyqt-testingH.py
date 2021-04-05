@@ -1,0 +1,11 @@
+from PyQt5.QtWidgets import QApplication, QLabel, QWidget, QCheckBox, QVBoxLayout, QPushButton
+app = QApplication([])
+window = QWidget()
+layout = QVBoxLayout()
+layout.addWidget(QLabel('Make the right choice:'))
+layout.addWidget(QCheckBox('Pee Pee'))
+layout.addWidget(QCheckBox('Poo Poo'))
+layout.addWidget(QPushButton('Submit'))
+window.setLayout(layout)
+window.show()
+app.exec()
