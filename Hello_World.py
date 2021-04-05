@@ -1,5 +1,11 @@
-from PyQt5.QtWidgets import QApplication, QLabel
+from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QVBoxLayout, QLabel
 app = QApplication([])
-label = QLabel('Hello World!')
-label.show()
+window = QWidget()
+layout = QVBoxLayout()
+layout.addWidget(QLabel('Welcome to our App!'))
+layout.addWidget(QPushButton('English'))
+layout.addWidget(QPushButton('Spanish'))
+window.setLayout(layout)
+window.show()
+#label.show()
 app.exec()
