@@ -10,3 +10,7 @@ with mic as source:
 text = r.recognize_google(audio)
 print(text)
 #this code will put the audio into text and then print the words
+
+
+text = r.recognize_google(audio, language = "es-US")
+#recognizes Spanish audio, specifically US Spanish
