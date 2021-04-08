@@ -1,4 +1,4 @@
-import speech_recognition as speech_recognition
+import speech_recognition as sr
 r = sr.Recognizer()
 mic = sr.Microphone()
 #this code imports speech_recognition and sets up the microphone
