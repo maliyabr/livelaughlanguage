@@ -1,16 +1,29 @@
 import speech_recognition as sr
+import googletrans
+from googletrans import translator
 r = sr.Recognizer()
 mic = sr.Microphone()
+translator = Translator()
 #this code imports speech_recognition and sets up the microphone
 
 with mic as source:
     audio = r.listen(source)
     #this code uses the microphone as the source for audio
     
-text = r.recognize_google(audio)
-print(text)
+englishtext = r.recognize_google(audio)
+result = translator.translate(englishtext, src='en', dest='es-US')
+print(englishtext)
+print(result.text)
 #this code will put the audio into text and then print the words
+#it well then translate the english text to spanish
+#then it will print both the english and spanish text
 
 
-text = r.recognize_google(audio, language = "es-US")
+spanishtext = r.recognize_google(audio, language = "es-US")
+result = translator.translate(spanishtext, src='es-US', dest='en')
+print(spanishtext)
+print(result.text)
 #recognizes Spanish audio, specifically US Spanish
+#it will then translate from spanish to english
+#then it will print the spanish and english text
+
