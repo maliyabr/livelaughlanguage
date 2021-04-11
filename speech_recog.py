@@ -1,6 +1,6 @@
 import speech_recognition as sr
 import googletrans
-from googletrans import translator
+from googletrans import Translator
 r = sr.Recognizer()
 mic = sr.Microphone()
 translator = Translator()
