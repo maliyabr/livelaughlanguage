@@ -7,6 +7,9 @@ translator = Translator()
 #this code imports speech_recognition and sets up the microphone
 
 with mic as source:
+    print('One Second Please!')
+    r.adjust_for_ambient_noise(source, duration=5) 
+    print('Hey! We want to hear your voice! Say something :)')
     audio = r.listen(source)
     #this code uses the microphone as the source for audio
    
