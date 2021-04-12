@@ -11,7 +11,7 @@ with mic as source:
     #this code uses the microphone as the source for audio
    
 englishtext = r.recognize_google(audio)
-result = translator.translate(englishtext, src='en-US', dest='es-US')
+result = translator.translate(englishtext, src='en', dest='es-US')
 print(englishtext)
 print(result.text)
 #this code will put the audio into text and then print the words
@@ -20,7 +20,7 @@ print(result.text)
 
 
 spanishtext = r.recognize_google(audio, language = "es-US")
-result = translator.translate(spanishtext, src='es-US', dest='en-US')
+result = translator.translate(spanishtext, src='es-US', dest='en')
 print(spanishtext)
 print(result.text)
 #recognizes Spanish audio, specifically US Spanish
