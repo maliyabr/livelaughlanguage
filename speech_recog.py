@@ -10,7 +10,7 @@ with mic as source:
     print('One Second Please!')
     r.adjust_for_ambient_noise(source, duration=5) 
     print('Hey! We want to hear your voice! Say something :)')
-    audio = r.listen(source)
+    audio = r.listen(source, duration=5)
     #this code uses the microphone as the source for audio
    
 englishtext = r.recognize_google(audio, language = "en")
