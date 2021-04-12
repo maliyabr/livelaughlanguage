@@ -10,7 +10,7 @@ with mic as source:
     audio = r.listen(source)
     #this code uses the microphone as the source for audio
    
-englishtext = r.recognize_google(audio)
+englishtext = r.recognize(audio)
 result = translator.translate(englishtext, src='en', dest='es-US')
 print(englishtext)
 print(result.text)
@@ -19,7 +19,7 @@ print(result.text)
 #then it will print both the english and spanish text
 
 
-spanishtext = r.recognize_google(audio, language = "es-US")
+spanishtext = r.recognize(audio, language = "es-US")
 result = translator.translate(spanishtext, src='es-US', dest='en')
 print(spanishtext)
 print(result.text)
