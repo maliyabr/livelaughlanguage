@@ -1,6 +1,10 @@
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QWidget, QCheckBox, QVBoxLayout, QPushButton, QMessageBox
 import sys
+
+def clicked():
+    print('clicked')
+
 def window():
     app = QApplication(sys.argv)
     win = QMainWindow()
@@ -13,13 +17,14 @@ def window():
     label.move(200,10)
 
     label1 = QtWidgets.QLabel(win) #sets up where the label is going to appear, in this case, win
-    label1.setText("Press The button to begin talking!") #what the label says
+    label1.setText("Press the button to begin talking!") #what the label says
     label1.move(200,30)
 
     # add buttton options
     english = QtWidgets.QPushButton(win)
     english.setText("Start Talking")
     english.move(90,50)
+    english.clicked.connect(clicked) #connect button click to the function clicked
 
     win.show()
     sys.exit(app.exec_()) #exits and closes application when you x out
