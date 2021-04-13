@@ -3,7 +3,7 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QWidget, QCheckBo
 import sys
 
 def clicked():
-    print('clicked')
+    print('you clicked it!')
 
 def window():
     app = QApplication(sys.argv)
