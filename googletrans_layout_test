@@ -1,6 +1,6 @@
-from PySide6.QtCore import *
-from PySide6.QtGui import *
-from PySide6.QtWidgets import *
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
+from PyQt5.QtWidgets import *
 
 
 class Ui_MainWindow(object):
@@ -83,10 +83,12 @@ class Ui_MainWindow(object):
     def update(self):
         self.label.adjustSize()
 
-def window():
-    app = QCoreApplication(sys.argv)
-    win = MainWindow
-    win.show()
-    sys.exit(app.exec_())
+if __name__ == '__main__':
+    app = QApplication([])
+    MainWindow = QMainWindow()
+    UI_Window = Ui_MainWindow()
+    UI_Window.setupUi(MainWindow)
+    MainWindow.show()
 
-window()
+    app.exec()
+
