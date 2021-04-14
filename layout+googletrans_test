@@ -2,6 +2,7 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 
+import pyaudio
 import speech_recognition as sr
 import googletrans
 from googletrans import Translator
@@ -101,9 +102,9 @@ class Ui_MainWindow(object):
     def clicked(self):
         with mic as source:
             self.label_3.setText("One Second Please!")
-            r.adjust_for_ambient_noise(source, duration=5)
+            r.adjust_for_ambient_noise(source, duration=1)
             self.label_3.setText("Start Speaking!")
-            audio = r.listen(source, timeout=5)
+            audio = r.listen(source, timeout=10)
         #this code uses the microphone as the source for audio
         self.update()
 
