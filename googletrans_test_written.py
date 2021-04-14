@@ -101,16 +101,18 @@ class Ui_MainWindow(object):
     
     def clicked(self):
         with mic as source:
-            self.label_3.setText("One Second Please!")
+            #self.label_3.setText("One Second Please!")
+            print("One Second Please!")
             r.adjust_for_ambient_noise(source, duration=1)
-            self.label_3.setText("Start Speaking!")
+            print("Speak now:")
+            #self.label_3.setText("Start Speaking!")
             audio = r.listen(source, timeout=10)
         #this code uses the microphone as the source for audio
         #write a debug for no audio heard (try & except)
         self.update()
 
         lang_text_1 = r.recognize_google(audio, language = "en")
-        lang_text_2 = r.recognize_google(lang_text_1, src='en', dest='es')
+        lang_text_2 = r.recognize_google(lang_text_1, src= "en", dest= "es")
 
         self.textEdit_1.setPlainText(lang_text_1)
         self.textEdit_2.setPlainText(lang_text_2)
