@@ -8,19 +8,19 @@ class MyWindow(QMainWindow):
         self.initUI() #this puts the ui (design of the window) into the window. drawing on the paper, paper is the window
 
     def initUI(self): #the ui set up of the window
-        label = QtWidgets.QLabel(win) #sets up where the label is going to appear, in this case, win
-        label.setText("Welcome!!") #what the label says
-        label.move(200,10)
+        self.label = QtWidgets.QLabel(self) #sets up where the label is going to appear, in this case, win
+        self.label.setText("Welcome!!") #what the label says
+        self.label.move(200,10)
 
-        label1 = QtWidgets.QLabel(win) #sets up where the label is going to appear, in this case, win
-        label1.setText("Press the button to begin talking!") #what the label says
-        label1.move(200,30)
+        self.label1 = QtWidgets.QLabel(self) #sets up where the label is going to appear, in this case, win
+        self.label1.setText("Press the button to begin talking!") #what the label says
+        self.label1.move(200,30)
 
         # add buttton options
-        english = QtWidgets.QPushButton(win)
-        english.setText("Start Talking")
-        english.move(90,50)
-        english.clicked.connect(clicked) #connect button click to the function clicked
+        self.english = QtWidgets.QPushButton(win)
+        self.english.setText("Start Talking")
+        self.english.move(90,50)
+        self.english.clicked.connect(clicked) #connect button click to the function clicked
 
 
 def clicked():
