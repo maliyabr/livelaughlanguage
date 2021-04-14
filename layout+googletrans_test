@@ -106,6 +106,7 @@ class Ui_MainWindow(object):
             self.label_3.setText("Start Speaking!")
             audio = r.listen(source, timeout=10)
         #this code uses the microphone as the source for audio
+        #write a debug for no audio heard (try & except)
         self.update()
 
         lang_text_1 = r.recognize_google(audio, language = "en")
