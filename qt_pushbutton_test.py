@@ -13,7 +13,7 @@ def setupUi(self, layout):
     self.pushButton.clicked.connect(self.changelabeltext)
     self.label = Qwidgets.QLabel(self.centralwidget)
     self.label.setText("")
-    def changelabetext(self):
+    def changelabeltext(self):
         self.label.setText("This is our English translation")
         self.pushButton.hide()
     #adding a signal and slot for the pushbutton function
