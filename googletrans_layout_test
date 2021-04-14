@@ -45,7 +45,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_2.addWidget(self.label)
 
-        self.Drop_Language1 = QFontComboBox(self.widget1)
+        self.Drop_Language1 = QComboBox(self.widget1)
         self.Drop_Language1.setObjectName(u"Drop_Language1")
 
         self.horizontalLayout_2.addWidget(self.Drop_Language1)
@@ -55,7 +55,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_2.addWidget(self.label_2)
 
-        self.Drop_Language2 = QFontComboBox(self.widget1)
+        self.Drop_Language2 = QComboBox(self.widget1)
         self.Drop_Language2.setObjectName(u"Drop_Language2")
 
         self.horizontalLayout_2.addWidget(self.Drop_Language2)
