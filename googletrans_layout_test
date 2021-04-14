@@ -12,8 +12,12 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName(u"centralwidget")
         self.pushButton_Translate = QPushButton(self.centralwidget)
         self.pushButton_Translate.setObjectName(u"pushButton_Translate")
-        self.pushButton_Translate.setGeometry(QRect(340, 420, 85, 32))
+        self.pushButton_Translate.setGeometry(QRect(340, 460, 85, 32))
         self.pushButton_Translate.setAutoDefault(True)
+        self.pushButton_Translate.clicked.connect(self.clicked)
+        self.label_3 = QLabel(self.centralwidget)
+        self.label_3.setObjectName(u"label_3")
+        self.label_3.setGeometry(QRect(340, 430, 85, 16))
         self.widget = QWidget(self.centralwidget)
         self.widget.setObjectName(u"widget")
         self.widget.setGeometry(QRect(40, 150, 681, 261))
@@ -64,6 +68,9 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
 
         QMetaObject.connectSlotsByName(MainWindow)
+
+        self.label_3.setText("")
+
     # setupUi
 
     def retranslateUi(self, MainWindow):
@@ -73,15 +80,15 @@ class Ui_MainWindow(object):
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"Select Language:", None))
     # retranslateUi
 
-    def init_button(self):
-        self.pushButton_Translate.clicked.connect(self.clicked)
+    #def init_button(self):
+        #self.pushButton_Translate.clicked.connect(self.clicked)
 
     def clicked(self):
-        self.label.setText("Start Speaking")
+        self.label_3.setText("Start Speaking")
         self.update()
 
     def update(self):
-        self.label.adjustSize()
+        self.label_3.adjustSize()
 
 if __name__ == '__main__':
     app = QApplication([])
