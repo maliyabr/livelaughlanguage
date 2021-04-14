@@ -110,7 +110,7 @@ class Ui_MainWindow(object):
         self.update()
 
         lang_text_1 = r.recognize_google(audio, language = "en")
-        lang_text_2 = r.recognize_google(text_1, src='en', dest='es')
+        lang_text_2 = r.recognize_google(lang_text_1, src='en', dest='es')
 
         self.textEdit_1.setPlainText(lang_text_1)
         self.textEdit_2.setPlainText(lang_text_2)
