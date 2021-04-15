@@ -125,7 +125,7 @@ class Ui_MainWindow(object):
 
     
     def count(self):
-        # define mic output as string
+        # define mic output as string (count for original language)
         string = str(self.lang_text_1)
         substring = "hello"
         count = string.count(substring)
