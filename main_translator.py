@@ -23,6 +23,7 @@ class Ui_MainWindow(object):
         self.pushButton_Translate.setGeometry(QRect(340, 460, 85, 32))
         self.pushButton_Translate.setAutoDefault(True)
         self.pushButton_Translate.clicked.connect(self.clicked)
+        self.pushButton_Translate.clicked.connect(self.count)
         self.label_3 = QLabel(self.centralwidget)
         self.label_3.setObjectName(u"label_3")
         self.label_3.setGeometry(QRect(340, 430, 85, 16))
@@ -111,25 +112,26 @@ class Ui_MainWindow(object):
         #write a debug for no audio heard (try & except)
         self.update()
 
-        lang_text_1 = r.recognize_google(audio, language = "en")
-        lang_text_2 = translator.translate(lang_text_1, src='en', dest='es')
+        self.lang_text_1 = r.recognize_google(audio, language = "en")
+        self.lang_text_2 = translator.translate(self.lang_text_1, src='en', dest='es')
 
-        self.textEdit_1.setPlainText(str(lang_text_1))
-        self.textEdit_2.setPlainText(str(lang_text_2.text))
+        self.textEdit_1.setPlainText(str(self.lang_text_1))
+        self.textEdit_2.setPlainText(str(self.lang_text_2.text))
         
-        print(lang_text_2.text)
+        print(self.lang_text_2.text)
 
     def update(self):
         self.label_3.adjustSize()
 
-    #def translate(self):
-        #text_1 = r.recognize_google(audio, language = "en")
-        #text_2 = r.recognize_google(text_1, src='en', dest='es')
-        #box 1
-        #box 2
+    
+    def count(self):
+        # define mic output as string
+        string = str(self.lang_text_1)
+        substring = "hello"
+        count = string.count(substring)
+        #print count
+        print("The count is:", count)
 
-#englishtext = r.recognize_google(audio, language = "en")
-#result = translator.translate(englishtext, src='en', dest='es')
 
 if __name__ == '__main__':
     app = QApplication([])
