@@ -114,9 +114,11 @@ class Ui_MainWindow(object):
         lang_text_1 = r.recognize_google(audio, language = "en")
         lang_text_2 = translator.translate(lang_text_1, src='en', dest='es')
 
-        self.textEdit_1.setPlainText(lang_text_1)
-        self.textEdit_2.setPlainText(lang_text_2)
+        self.textEdit_1.setPlainText(str(lang_text_1))
+        self.textEdit_2.setPlainText(str(lang_text_2.text))
         
+        print(lang_text_2.text)
+
     def update(self):
         self.label_3.adjustSize()
 
