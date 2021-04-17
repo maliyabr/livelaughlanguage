@@ -127,6 +127,7 @@ class Ui_MainWindow(object):
         #this code uses the microphone as the source for audio
         #write a debug for no audio heard (try & except)
         #self.update()
+            self.update()
 
             self.lang_text_1 = r.recognize_google(audio, language = "en")
             self.lang_text_2 = translator.translate(self.lang_text_1, src='en', dest='es')

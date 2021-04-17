@@ -27,7 +27,7 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
-        self.plainTextEdit.setPlainText(_translate("Form", "The count is:", count))
+        self.plainTextEdit.setPlainText(_translate("Form", "The count is:"))
 
 
 if __name__ == "__main__":
