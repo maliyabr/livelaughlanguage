@@ -94,6 +94,13 @@ class Ui_MainWindow(object):
     #def init_button(self):
         #self.pushButton_Translate.clicked.connect(self.clicked)
 
+    #made an error message
+    def errorMessage(self):
+        error = QMessageBox()
+        error.setIcon(QMessageBox.Critial)
+        error.setWindowTitle("Error")
+        error.setText("you fucked up")
+        error.exec_()
     
     def add_languages(self):
         for x in googletrans.LANGUAGES.values():
@@ -101,7 +108,6 @@ class Ui_MainWindow(object):
             self.Drop_Language2.addItem(x.capitalize())
     
     def clicked(self):
-         def clicked(self):
         with mic as source:
             msg = QMessageBox()
             msg.setText("One Second Please!")
@@ -113,6 +119,15 @@ class Ui_MainWindow(object):
             x = msg.exec()
             print("You can speak now!")
             audio = r.listen(source, timeout=10)
+            
+            # my attempt at a try function
+
+            # try:
+            #     speech_recognition.WaitTimeoutError
+            # except: 
+            #     self.errorMessage(self)
+                
+    
         #this code uses the microphone as the source for audio
         #write a debug for no audio heard (try & except)
         self.update()
@@ -127,6 +142,7 @@ class Ui_MainWindow(object):
 
     def update(self):
         self.label_3.adjustSize()
+
 
     
     def count(self):
