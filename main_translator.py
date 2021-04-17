@@ -23,7 +23,7 @@ class Ui_MainWindow(object):
         self.pushButton_Translate.setGeometry(QRect(340, 460, 85, 32))
         self.pushButton_Translate.setAutoDefault(True)
         self.pushButton_Translate.clicked.connect(self.clicked)
-        self.pushButton_Translate.clicked.connect(self.count)
+        #self.pushButton_Translate.clicked.connect(self.count)
         self.label_3 = QLabel(self.centralwidget)
         self.label_3.setObjectName(u"label_3")
         self.label_3.setGeometry(QRect(340, 430, 85, 16))
@@ -143,16 +143,14 @@ class Ui_MainWindow(object):
     def update(self):
         self.label_3.adjustSize()
 
-
     
-    def count(self):
+    #def count(self):
         # define mic output as string (count for original language)
-        string = str(self.lang_text_1)
-        substring = "hello"
-        count = string.count(substring)
+        #string = str(self.lang_text_1)
+        #substring = input("Please enter a keyword\n")
+        #count = string.count(substring)
         #print count
-        print("The count is:", count)
-
+        #print("The count for " + substring + " is:", count)
 
 if __name__ == '__main__':
     app = QApplication([])

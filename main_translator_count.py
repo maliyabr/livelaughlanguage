@@ -144,14 +144,13 @@ class Ui_MainWindow(object):
         self.label_3.adjustSize()
 
 
-    
-    def count(self):
-        # define mic output as string (count for original language)
-        string = str(self.lang_text_1)
-        substring = "hello"
-        count = string.count(substring)
-        #print count
-        print("The count is:", count)
+    # def count(self):
+    #     string = str(self.lang_text_1)
+    #     substring = "hello"
+    #     counter = string.count(substring)
+    #     #print count
+    #     msg = QMessageBox()
+    #     msg.setText("The count is:", counter)
 
 
 if __name__ == '__main__':
