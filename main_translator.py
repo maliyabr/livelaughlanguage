@@ -143,7 +143,6 @@ class Ui_MainWindow(object):
     def update(self):
         self.label_3.adjustSize()
 
-
     
     def count(self):
         # define mic output as string (count for original language)
