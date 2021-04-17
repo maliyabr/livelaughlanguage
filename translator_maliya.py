@@ -129,9 +129,8 @@ class Ui_MainWindow(object):
     def count(self):
         # define mic output as string (count for original language)
         string = str(self.lang_text_1)
-        substring = "hello"
+        substring = input("what word would you like to count?")
         count = string.count(substring)
-        #print count
         print("The count is:", count)
 
 
