@@ -148,11 +148,10 @@ class Ui_MainWindow(object):
     def count(self):
         # define mic output as string (count for original language)
         string = str(self.lang_text_1)
-        substring = "hello"
+        substring = input("Please enter a keyword\n")
         count = string.count(substring)
         #print count
-        print("The count is:", count)
-
+        print("The count for " + substring + " is:", count)
 
 if __name__ == '__main__':
     app = QApplication([])
