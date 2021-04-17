@@ -2,6 +2,7 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 
+
 import pyaudio
 import speech_recognition as sr
 import googletrans
@@ -144,13 +145,16 @@ class Ui_MainWindow(object):
         self.label_3.adjustSize()
 
 
-    # def count(self):
-    #     string = str(self.lang_text_1)
-    #     substring = "hello"
-    #     counter = string.count(substring)
-    #     #print count
-    #     msg = QMessageBox()
-    #     msg.setText("The count is:", counter)
+    def count(self):
+        string = str(self.lang_text_1)
+        substring = input("Please enter a keyword\n")
+        QCoreApplication.quit()
+        
+        pyqtRemoveInputHook()
+        app = QCoreApplication(sys.argv)
+        count = string.count(substring)
+        #print count
+        print("The count for " + substring + " is:", count)
 
 
 if __name__ == '__main__':
