@@ -148,12 +148,11 @@ class Ui_MainWindow(object):
             x = msg.exec()
             print("Unknown Error, try again!")
 
-
     
     def countclick(self):
         # define mic output as string (count for original language)
         string = str(self.lang_text_1)
-        substring = input("Please enter a keyword\n")
+        substring = input("Please enter a keyword in the original language\n")
         count = string.count(substring)
         #print count
         print("The count for " + substring + " is:", count)
