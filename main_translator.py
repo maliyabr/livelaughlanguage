@@ -139,9 +139,9 @@ class Ui_MainWindow(object):
             print(self.lang_text_2.text)
         except AttributeError: 
             msg = QMessageBox()
-            msg.setText("Error!")
+            msg.setText("Attribute Error!")
             x = msg.exec()
-            print("Error!")
+            print("Attribute Error!")
         except Exception as e: 
             msg = QMessageBox()
             msg.setText("Unknown Error, try again!")
