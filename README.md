@@ -1,3 +1,5 @@
 # livelaughlanguage
 
-This project was designed to implement speech recognition code and use it transcribe and then translate that transcitption into Spanish. We then have a GUI portion of the project where we make this implementation user friendly. We used the Speech Recognition Library and the PyQt package. 
+This project was designed to implement speech recognition code and use it transcribe and then translate that transcitption from any language you want into any other language. This project also uses PyQt5 to create a GUI where we make the implementation user friendly. There is also an autograder-type option where you can designate a word to seach search for in the transcribed text and count how many times that word was listed. 
+
+We used the Speech Recognition Library and the PyQt5 package. We also used the Google API for the speech recognition and translation sections. 
