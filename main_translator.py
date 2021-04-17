@@ -99,14 +99,14 @@ class Ui_MainWindow(object):
         try:
             with mic as source:
                 msg = QMessageBox()
-                msg.setText("One Second Please!")
+                msg.setText("Welcome to Our Translator!")
                 x = msg.exec()
-                print("One Second Please!")
+                print("Welcome to Our Translator!")
                 r.adjust_for_ambient_noise(source, duration=1)
                 msg = QMessageBox()
-                msg.setText("You can speak now!")
+                msg.setText("Press OK and speak now!")
                 x = msg.exec()
-                print("You can speak now!")
+                print("Press OK and speak now!")
                 audio = r.listen(source, timeout=10)
             #this code uses the microphone as the source for audio
             #write a debug for no audio heard (try & except)
