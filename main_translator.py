@@ -17,12 +17,23 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(929, 663)
+        MainWindow.resize(765, 663)
+
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.pushButton_Translate = QPushButton(self.centralwidget)
         self.pushButton_Translate.setObjectName(u"pushButton_Translate")
         self.pushButton_Translate.setGeometry(QRect(340, 440, 85, 32))
+
+        self.centralwidget.setStyleSheet("""
+        QPushButton {
+            font: bold;
+            border: 2px solid black;
+            border-radius: 4px;
+            background-color: rgb(204, 230, 255);
+            }
+        """)
+
         self.pushButton_Translate.setAutoDefault(True)
         self.pushButton_Translate.clicked.connect(self.clicked)
         #self.pushButton_Translate.clicked.connect(self.count)
