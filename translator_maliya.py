@@ -81,7 +81,6 @@ class Ui_MainWindow(object):
         self.label_3.setText("")
 
         self.add_languages()
-
     # setupUi
 
     def retranslateUi(self, MainWindow):
@@ -94,14 +93,12 @@ class Ui_MainWindow(object):
     #def init_button(self):
         #self.pushButton_Translate.clicked.connect(self.clicked)
 
-    
     def add_languages(self):
         for x in googletrans.LANGUAGES.values():
             self.Drop_Language1.addItem(x.capitalize())
             self.Drop_Language2.addItem(x.capitalize())
-    
+
     def clicked(self):
-         def clicked(self):
         with mic as source:
             msg = QMessageBox()
             msg.setText("One Second Please!")
