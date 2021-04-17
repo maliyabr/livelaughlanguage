@@ -1,4 +1,8 @@
 {
     "jupyter.jupyterServerType": "local",
+<<<<<<< HEAD
     "python.pythonPath": "/opt/anaconda3/envs/snakes/bin/python"
+=======
+    "python.pythonPath": "/Users/alexisgiff/opt/anaconda3/envs/snakes/bin/python"
+>>>>>>> 8d9d15fedfc35aec6c994090638ae7a4fcbe9abd
 }
