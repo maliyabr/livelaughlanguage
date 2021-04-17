@@ -9,7 +9,7 @@ from googletrans import Translator
 r = sr.Recognizer()
 mic = sr.Microphone()
 translator = Translator()
-pyqtRemoveInputHook() #supresses error message
+#pyqtRemoveInputHook() #supresses error message
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
