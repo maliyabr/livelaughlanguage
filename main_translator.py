@@ -128,9 +128,10 @@ class Ui_MainWindow(object):
         #write a debug for no audio heard (try & except)
         #self.update()
             #self.update()
-
+            lang_1 = self.Drop_Language1.currentText()
+            lang_2 = self.Drop_Language2.currentText()
             self.lang_text_1 = r.recognize_google(audio, language = "en")
-            self.lang_text_2 = translator.translate(self.lang_text_1, src='en', dest='es')
+            self.lang_text_2 = translator.translate(self.lang_text_1, src=lang_1, dest=lang_2)
 
             self.textEdit_1.setPlainText(str(self.lang_text_1))
             self.textEdit_2.setPlainText(str(self.lang_text_2.text))
