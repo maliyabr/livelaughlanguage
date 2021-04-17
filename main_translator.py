@@ -2,6 +2,7 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 
+import sys
 import pyaudio
 import speech_recognition as sr
 import googletrans
@@ -24,16 +25,6 @@ class Ui_MainWindow(object):
         self.pushButton_Translate = QPushButton(self.centralwidget)
         self.pushButton_Translate.setObjectName(u"pushButton_Translate")
         self.pushButton_Translate.setGeometry(QRect(340, 440, 85, 32))
-
-        self.centralwidget.setStyleSheet("""
-        QPushButton {
-            font: bold;
-            border: 2px solid black;
-            border-radius: 4px;
-            background-color: rgb(204, 230, 255);
-            }
-        """)
-
         self.pushButton_Translate.setAutoDefault(True)
         self.pushButton_Translate.clicked.connect(self.clicked)
         #self.pushButton_Translate.clicked.connect(self.count)
@@ -83,6 +74,29 @@ class Ui_MainWindow(object):
         QMetaObject.connectSlotsByName(MainWindow)
         self.add_languages()
 
+       #CSS Classes 
+        self.centralwidget.setStyleSheet("""
+
+
+        QComboBox {
+            background-color: rgb(204, 230, 255);
+        }
+
+        QLabel {
+            font-weight: bold;
+            color: rgb(0, 51, 51);
+
+        }
+
+        QPushButton {
+            font: bold;
+            border: 2px solid black;
+            border-radius: 4px;
+            background-color: rgb(204, 230, 255);
+            }
+        """)
+   
+   
     # setupUi
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
@@ -149,6 +163,7 @@ class Ui_MainWindow(object):
         count = string.count(substring)
         #Print count for keyword
         print("The count for " + substring + " is:", count)
+
 
 if __name__ == '__main__':
     app = QApplication([])
