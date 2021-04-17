@@ -126,11 +126,8 @@ class Ui_MainWindow(object):
                 audio = r.listen(source, timeout=10)
         #this code uses the microphone as the source for audio
         #write a debug for no audio heard (try & except)
-<<<<<<< HEAD
         #self.update()
-=======
             self.update()
->>>>>>> 54fadca2a742703820123ee71d418cb2355de106
 
             self.lang_text_1 = r.recognize_google(audio, language = "en")
             self.lang_text_2 = translator.translate(self.lang_text_1, src='en', dest='es')
@@ -152,19 +149,7 @@ class Ui_MainWindow(object):
 
 
     
-<<<<<<< HEAD
     def countclick(self):
-=======
-    def count(self):
-        # define mic output as string (count for original language)
-        string = str(self.lang_text_1)
-        substring = input("what word would you like to count?")
-        count = string.count(substring)
-        print("The count is:", count)
-
-    
-    #def count(self):
->>>>>>> 54fadca2a742703820123ee71d418cb2355de106
         # define mic output as string (count for original language)
         string = str(self.lang_text_1)
         substring = input("Please enter a keyword\n")
