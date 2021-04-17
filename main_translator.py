@@ -112,40 +112,59 @@ class Ui_MainWindow(object):
             self.Drop_Language2.addItem(x.capitalize())
     
     def clicked(self):
-        with mic as source:
-            msg = QMessageBox()
-            msg.setText("One Second Please!")
-            x = msg.exec()
-            print("One Second Please!")
-            r.adjust_for_ambient_noise(source, duration=1)
-            msg = QMessageBox()
-            msg.setText("You can speak now!")
-            x = msg.exec()
-            print("You can speak now!")
-            audio = r.listen(source, timeout=10)
-            
-            # my attempt at a try function
-
-            # try:
-            #     speech_recognition.WaitTimeoutError
-            # except: 
-            #     self.errorMessage(self)
-                
-    
+        try:
+            with mic as source:
+                msg = QMessageBox()
+                msg.setText("One Second Please!")
+                x = msg.exec()
+                print("One Second Please!")
+                r.adjust_for_ambient_noise(source, duration=1)
+                msg = QMessageBox()
+                msg.setText("You can speak now!")
+                x = msg.exec()
+                print("You can speak now!")
+                audio = r.listen(source, timeout=10)
         #this code uses the microphone as the source for audio
         #write a debug for no audio heard (try & except)
+<<<<<<< HEAD
         #self.update()
+=======
+            self.update()
+>>>>>>> 54fadca2a742703820123ee71d418cb2355de106
 
-        self.lang_text_1 = r.recognize_google(audio, language = "en")
-        self.lang_text_2 = translator.translate(self.lang_text_1, src='en', dest='es')
+            self.lang_text_1 = r.recognize_google(audio, language = "en")
+            self.lang_text_2 = translator.translate(self.lang_text_1, src='en', dest='es')
 
-        self.textEdit_1.setPlainText(str(self.lang_text_1))
-        self.textEdit_2.setPlainText(str(self.lang_text_2.text))
+            self.textEdit_1.setPlainText(str(self.lang_text_1))
+            self.textEdit_2.setPlainText(str(self.lang_text_2.text))
         
-        print(self.lang_text_2.text)
+            print(self.lang_text_2.text)
+        except AttributeError: 
+            msg = QMessageBox()
+            msg.setText("Error!")
+            x = msg.exec()
+            print("Error!")
+        except Exception as e: 
+            msg = QMessageBox()
+            msg.setText("Unknown Error, try again!")
+            x = msg.exec()
+            print("Unknown Error, try again!")
+
 
     
+<<<<<<< HEAD
     def countclick(self):
+=======
+    def count(self):
+        # define mic output as string (count for original language)
+        string = str(self.lang_text_1)
+        substring = input("what word would you like to count?")
+        count = string.count(substring)
+        print("The count is:", count)
+
+    
+    #def count(self):
+>>>>>>> 54fadca2a742703820123ee71d418cb2355de106
         # define mic output as string (count for original language)
         string = str(self.lang_text_1)
         substring = input("Please enter a keyword\n")
