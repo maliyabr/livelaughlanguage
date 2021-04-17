@@ -97,30 +97,41 @@ class Ui_MainWindow(object):
         for x in googletrans.LANGUAGES.values():
             self.Drop_Language1.addItem(x.capitalize())
             self.Drop_Language2.addItem(x.capitalize())
-
     def clicked(self):
-        with mic as source:
-            msg = QMessageBox()
-            msg.setText("One Second Please!")
-            x = msg.exec()
-            print("One Second Please!")
-            r.adjust_for_ambient_noise(source, duration=1)
-            msg = QMessageBox()
-            msg.setText("You can speak now!")
-            x = msg.exec()
-            print("You can speak now!")
-            audio = r.listen(source, timeout=10)
+        try:
+            with mic as source:
+                msg = QMessageBox()
+                msg.setText("One Second Please!")
+                x = msg.exec()
+                print("One Second Please!")
+                r.adjust_for_ambient_noise(source, duration=1)
+                msg = QMessageBox()
+                msg.setText("You can speak now!")
+                x = msg.exec()
+                print("You can speak now!")
+                audio = r.listen(source, timeout=10)
         #this code uses the microphone as the source for audio
         #write a debug for no audio heard (try & except)
-        self.update()
+            self.update()
 
-        self.lang_text_1 = r.recognize_google(audio, language = "en")
-        self.lang_text_2 = translator.translate(self.lang_text_1, src='en', dest='es')
+            self.lang_text_1 = r.recognize_google(audio, language = "en")
+            self.lang_text_2 = translator.translate(self.lang_text_1, src='en', dest='es')
 
-        self.textEdit_1.setPlainText(str(self.lang_text_1))
-        self.textEdit_2.setPlainText(str(self.lang_text_2.text))
+            self.textEdit_1.setPlainText(str(self.lang_text_1))
+            self.textEdit_2.setPlainText(str(self.lang_text_2.text))
         
-        print(self.lang_text_2.text)
+            print(self.lang_text_2.text)
+        except AttributeError: 
+            msg = QMessageBox()
+            msg.setText("Error!")
+            x = msg.exec()
+            print("Error!")
+        except Exception as e: 
+            msg = QMessageBox()
+            msg.setText("Unknown Error, try again!")
+            x = msg.exec()
+            print("Unknown Error, try again!")
+
 
     def update(self):
         self.label_3.adjustSize()
