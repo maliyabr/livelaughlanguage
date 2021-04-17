@@ -152,19 +152,7 @@ class Ui_MainWindow(object):
 
 
     
-<<<<<<< HEAD
     def countclick(self):
-=======
-    def count(self):
-        # define mic output as string (count for original language)
-        string = str(self.lang_text_1)
-        substring = input("what word would you like to count?")
-        count = string.count(substring)
-        print("The count is:", count)
-
-    
-    #def count(self):
->>>>>>> 54fadca2a742703820123ee71d418cb2355de106
         # define mic output as string (count for original language)
         string = str(self.lang_text_1)
         substring = input("Please enter a keyword\n")
