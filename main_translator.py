@@ -15,18 +15,15 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(772, 643)
+        MainWindow.resize(929, 663)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.pushButton_Translate = QPushButton(self.centralwidget)
         self.pushButton_Translate.setObjectName(u"pushButton_Translate")
-        self.pushButton_Translate.setGeometry(QRect(340, 460, 85, 32))
+        self.pushButton_Translate.setGeometry(QRect(340, 440, 85, 32))
         self.pushButton_Translate.setAutoDefault(True)
         self.pushButton_Translate.clicked.connect(self.clicked)
         #self.pushButton_Translate.clicked.connect(self.count)
-        self.label_3 = QLabel(self.centralwidget)
-        self.label_3.setObjectName(u"label_3")
-        self.label_3.setGeometry(QRect(340, 430, 85, 16))
         self.widget = QWidget(self.centralwidget)
         self.widget.setObjectName(u"widget")
         self.widget.setGeometry(QRect(40, 150, 681, 261))
@@ -69,6 +66,12 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_2.addWidget(self.Drop_Language2)
 
+        self.countButton = QPushButton(self.centralwidget)
+        self.countButton.setObjectName(u"countButton")
+        self.countButton.setGeometry(QRect(330, 470, 108, 32))
+        self.countButton.setAutoDefault(True)
+        self.countButton.clicked.connect(self.countclick)
+
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -78,7 +81,7 @@ class Ui_MainWindow(object):
 
         QMetaObject.connectSlotsByName(MainWindow)
 
-        self.label_3.setText("")
+        #self.label_3.setText("")
 
         self.add_languages()
 
@@ -89,6 +92,7 @@ class Ui_MainWindow(object):
         self.pushButton_Translate.setText(QCoreApplication.translate("MainWindow", u"Translate", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"Select Language:", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"Select Language:", None))
+        self.countButton.setText(QCoreApplication.translate("MainWindow", u"Count Words", None))
     # retranslateUi
 
     #def init_button(self):
@@ -130,7 +134,7 @@ class Ui_MainWindow(object):
     
         #this code uses the microphone as the source for audio
         #write a debug for no audio heard (try & except)
-        self.update()
+        #self.update()
 
         self.lang_text_1 = r.recognize_google(audio, language = "en")
         self.lang_text_2 = translator.translate(self.lang_text_1, src='en', dest='es')
@@ -140,17 +144,14 @@ class Ui_MainWindow(object):
         
         print(self.lang_text_2.text)
 
-    def update(self):
-        self.label_3.adjustSize()
-
     
-    #def count(self):
+    def countclick(self):
         # define mic output as string (count for original language)
-        #string = str(self.lang_text_1)
-        #substring = input("Please enter a keyword\n")
-        #count = string.count(substring)
+        string = str(self.lang_text_1)
+        substring = input("Please enter a keyword\n")
+        count = string.count(substring)
         #print count
-        #print("The count for " + substring + " is:", count)
+        print("The count for " + substring + " is:", count)
 
 if __name__ == '__main__':
     app = QApplication([])
