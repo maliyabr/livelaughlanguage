@@ -1,3 +1,4 @@
+#import all necessary packages and libraries into the code before anything
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
@@ -112,8 +113,10 @@ class Ui_MainWindow(object):
             self.Drop_Language1.addItem(x.capitalize())
             self.Drop_Language2.addItem(x.capitalize())
     
+    #This is what occurs when the translate button is pushed
     def clicked(self):
         try:
+            #this code uses the microphone as the source for audio
             with mic as source:
                 msg = QMessageBox()
                 msg.setText("Welcome to Our Translator!")
@@ -125,8 +128,6 @@ class Ui_MainWindow(object):
                 x = msg.exec()
                 #print("Press OK and speak now!")
                 audio = r.listen(source, timeout=10)
-            #this code uses the microphone as the source for audio
-            #write a debug for no audio heard (try & except)
             lang_1 = self.Drop_Language1.currentText()
             lang_2 = self.Drop_Language2.currentText()
             self.lang_text_1 = r.recognize_google(audio)#, language = "en")
@@ -140,12 +141,14 @@ class Ui_MainWindow(object):
             msg.setText("Attribute Error!")
             x = msg.exec()
             #print("Attribute Error!")
+        #other errors go here
         except Exception as e: 
             msg = QMessageBox()
             msg.setText("Unknown Error, try again!")
             x = msg.exec()
             #print("Unknown Error, try again!")
-
+    
+    #function for autograder
     def countclick(self):
         #Define microphone output as string (count for original language)
         string = str(self.lang_text_1)
