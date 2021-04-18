@@ -27,7 +27,6 @@ class Ui_MainWindow(object):
         self.pushButton_Translate.setGeometry(QRect(340, 440, 85, 32))
         self.pushButton_Translate.setAutoDefault(True)
         self.pushButton_Translate.clicked.connect(self.clicked)
-        #self.pushButton_Translate.clicked.connect(self.count)
         self.widget = QWidget(self.centralwidget)
         self.widget.setObjectName(u"widget")
         self.widget.setGeometry(QRect(40, 150, 681, 261))
@@ -99,20 +98,13 @@ class Ui_MainWindow(object):
    
     # setupUi
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
+        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"The Big Brain Translator", None))
         self.pushButton_Translate.setText(QCoreApplication.translate("MainWindow", u"Translate", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"Select Language:", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"Select Language:", None))
         self.countButton.setText(QCoreApplication.translate("MainWindow", u"Count Words", None))
     # retranslateUi
   
-    #Error Message
-    def errorMessage(self):
-        error = QMessageBox()
-        error.setIcon(QMessageBox.Critial)
-        error.setWindowTitle("Error")
-        error.setText("You fucked up")
-        error.exec_()
     
     #Languages using Google Translate
     def add_languages(self):
@@ -126,17 +118,15 @@ class Ui_MainWindow(object):
                 msg = QMessageBox()
                 msg.setText("Welcome to Our Translator!")
                 x = msg.exec()
-                print("Welcome to Our Translator!")
+                #print("Welcome to Our Translator!")
                 r.adjust_for_ambient_noise(source, duration=1)
                 msg = QMessageBox()
                 msg.setText("Press OK and speak now!")
                 x = msg.exec()
-                print("Press OK and speak now!")
+                #print("Press OK and speak now!")
                 audio = r.listen(source, timeout=10)
             #this code uses the microphone as the source for audio
             #write a debug for no audio heard (try & except)
-            #self.update()
-            #self.update()
             lang_1 = self.Drop_Language1.currentText()
             lang_2 = self.Drop_Language2.currentText()
             self.lang_text_1 = r.recognize_google(audio, language = "en")
@@ -149,12 +139,12 @@ class Ui_MainWindow(object):
             msg = QMessageBox()
             msg.setText("Attribute Error!")
             x = msg.exec()
-            print("Attribute Error!")
+            #print("Attribute Error!")
         except Exception as e: 
             msg = QMessageBox()
             msg.setText("Unknown Error, try again!")
             x = msg.exec()
-            print("Unknown Error, try again!")
+            #print("Unknown Error, try again!")
 
     def countclick(self):
         #Define microphone output as string (count for original language)
@@ -162,7 +152,10 @@ class Ui_MainWindow(object):
         substring = input("Please enter a keyword in the original language\n")
         count = string.count(substring)
         #Print count for keyword
-        print("The count for " + substring + " is:", count)
+        c = QMessageBox()
+        c.setText(str("The count for " + substring + " is:", count))
+        x = msg.exec()
+        #print("The count for " + substring + " is:", count)
 
 
 if __name__ == '__main__':
