@@ -12,7 +12,7 @@ from googletrans import Translator
 r = sr.Recognizer()
 mic = sr.Microphone()
 translator = Translator()
-pyqtRemoveInputHook() #supresses error message
+pyqtRemoveInputHook() #supresses error message during countclick 
 
 #Main Window Class
 class Ui_MainWindow(object):
