@@ -129,7 +129,7 @@ class Ui_MainWindow(object):
             #write a debug for no audio heard (try & except)
             lang_1 = self.Drop_Language1.currentText()
             lang_2 = self.Drop_Language2.currentText()
-            self.lang_text_1 = r.recognize_google(audio, language = "en")
+            self.lang_text_1 = r.recognize_google(audio)#, language = "en")
             self.lang_text_2 = translator.translate(self.lang_text_1, src=lang_1, dest=lang_2)
             self.textEdit_1.setPlainText(str(self.lang_text_1))
             self.textEdit_2.setPlainText(str(self.lang_text_2.text))
@@ -153,8 +153,9 @@ class Ui_MainWindow(object):
         count = string.count(substring)
         #Print count for keyword
         c = QMessageBox()
-        c.setText(str("The count for " + substring + " is:", count))
-        x = msg.exec()
+        message = "The count for " + substring + " is:", count
+        c.setText(str(message))
+        x = c.exec()
         #print("The count for " + substring + " is:", count)
 
 
