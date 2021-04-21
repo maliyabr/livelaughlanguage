@@ -156,11 +156,9 @@ class Ui_MainWindow(object):
         count = string.count(substring)
         #Print count for keyword
         c = QMessageBox()
-        message = "The count for " + substring + " is:", count
+        message = "The count for " + substring + " is: " + str(count)
         c.setText(str(message))
         x = c.exec()
-        #print("The count for " + substring + " is:", count)
-
 
 if __name__ == '__main__':
     app = QApplication([])
