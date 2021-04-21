@@ -1,4 +1,5 @@
 #import all necessary packages and libraries into the code before anything
+from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
@@ -20,7 +21,6 @@ class Ui_MainWindow(object):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.resize(765, 663)
-
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.pushButton_Translate = QPushButton(self.centralwidget)
@@ -66,6 +66,11 @@ class Ui_MainWindow(object):
         self.countButton.setGeometry(QRect(330, 470, 108, 32))
         self.countButton.setAutoDefault(True)
         self.countButton.clicked.connect(self.countclick)
+        #Label containing a photo of us!
+        self.label_4 = QtWidgets.QLabel(self.centralwidget)
+        self.label_4.setGeometry(QtCore.QRect(130, 500, 511, 141))
+        self.label_4.setObjectName("label_4")
+        #Status Bar
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -99,13 +104,19 @@ class Ui_MainWindow(object):
    
     # setupUi
     def retranslateUi(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"The Big Brain Translator", None))
         self.pushButton_Translate.setText(QCoreApplication.translate("MainWindow", u"Translate", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"Select Language:", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"Select Language:", None))
         self.countButton.setText(QCoreApplication.translate("MainWindow", u"Count Words", None))
-    # retranslateUi
-  
+        
+        #picture
+        self.label_4.setText(_translate("MainWindow", "<html><head/><body><p><img src=\":/newPrefixpic/bbs.jpg\"/></p></body></html>"))
+        
+        # retranslateUi
+
+    import pic
     
     #Languages using Google Translate
     def add_languages(self):
